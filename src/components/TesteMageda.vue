@@ -15,7 +15,7 @@
       />
     </div>
 
-    <q-btn color="green" label="Enviar" />
+    <q-btn color="green" label="Enviar" @click="sendValue"/>
   </q-page>
 </template>
 
@@ -39,7 +39,26 @@ export default {
   },
 
   methods: {
-    
+    sendValue() {
+      const data = {
+        value_slider: this.slider
+      }
+      this.axiosInstance.post('/value-slider', data)
+      .then(() => {
+        this.$q.notify({
+          message: 'Envio realizado com sucesso!',
+          caption: 'Valor enviado: ' + data.value_slider,
+          color: 'secondary'
+        })
+      })
+      .catch(() => {
+        this.$q.notify({
+          message: 'API offline!',
+          caption: 'Valor enviado: ' + data.value_slider,
+          color: 'info'
+        })
+      })
+    }
   },
 
   watch: {
