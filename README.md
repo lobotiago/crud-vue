@@ -1,4 +1,4 @@
-# teste-mageda
+# teste-mageda-front
 
 ## Project setup
 ```
