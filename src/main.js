@@ -4,7 +4,7 @@ import './quasar'
 import axios from 'axios'
 import VueAxios from 'vue-axios';
 
-Vue.use(axios, VueAxios)
+Vue.use(VueAxios, axios)
 const base = axios.create({
   // baseURL: 'http://localhost:9009/api/v1'   // API Rodando localmente
   baseURL: 'https://teste-mageda-api.herokuapp.com/api/v1'   // API Rodando no servidor

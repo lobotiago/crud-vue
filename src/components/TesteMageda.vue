@@ -94,6 +94,8 @@ export default {
     width: 250px
 
   h3
+    padding: 0 15px
+    text-align: center
     transition: color 0.5s
 
   .slider
@@ -108,4 +110,14 @@ export default {
 
   .q-btn
     margin: 40px auto
+
+  @media screen and (max-width: 800px)
+    .q-page-container
+      main
+        padding-right: calc(5% + 30px)
+    .slider
+      right: 5%
+      .q-slider
+        &__pin-text
+          font-size: 16px
 </style>
